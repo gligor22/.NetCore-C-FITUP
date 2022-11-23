@@ -1,0 +1,68 @@
+﻿@model IEnumerable<FitUp.Domain.Models.Training>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center text-secondary my-4">Training</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+<div class=" table-responsive" style="overflow-y: auto; height:400px">
+<table class="table">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>
+                Training Type
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                Date Time
+            </th>
+            <th>
+                Capacity
+            </th>
+            <th>
+               Main Coach
+            </th>
+            <th></th>
+                
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capacity)
+            </td>
+            <td>
+                @item.Coach.FirstName @item.Coach.LastName
+            </td>     
+            <td>
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> 
+                    <a class="mr-2" asp-action = "Delete" asp-route-id="@item.id">Delete </a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

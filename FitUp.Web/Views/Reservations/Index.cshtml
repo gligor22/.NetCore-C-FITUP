@@ -1,0 +1,43 @@
+﻿@model IEnumerable<FitUp.Domain.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center text-secondary my-4">Reservations</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class=" table-responsive" style="overflow-y: auto; height:400px">
+<table class="table">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Training)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Training.type   @item.Training.dateTime
+            </td>
+            <td>
+               @item.Client.FirstName @item.Client.LastName
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

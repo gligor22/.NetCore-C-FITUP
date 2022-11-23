@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FitUp.Domain.Models.Payment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center text-secondary my-4">Payments</h2>
+
+<div>
+
+<div class=" d-inline-block">
+    <a asp-action="Create">Create New</a>
+</div>
+</div>
+<div class=" table-responsive" style="overflow-y: auto; height:400px">
+<table class="table">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>
+                Payed Price
+            </th>
+            <th>
+                Number Of Trainings Per Week
+            </th>
+            <th>
+                Payment Day
+            </th>
+            <th>
+                Client Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payed_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.week_number_trainings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payment_date)
+            </td>
+            <td>
+                @item.Client.FirstName @item.Client.LastName
+            </td>
+            <td>
+                <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

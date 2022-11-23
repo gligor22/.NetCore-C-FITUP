@@ -1,0 +1,15 @@
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\bin\Debug\netcoreapp3.1\FitUp.Service.deps.json
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\bin\Debug\netcoreapp3.1\FitUp.Service.dll
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\bin\Debug\netcoreapp3.1\FitUp.Service.pdb
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\obj\Debug\netcoreapp3.1\FitUp.Service.csproj.AssemblyReference.cache
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\obj\Debug\netcoreapp3.1\FitUp.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\obj\Debug\netcoreapp3.1\FitUp.Service.AssemblyInfoInputs.cache
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\obj\Debug\netcoreapp3.1\FitUp.Service.AssemblyInfo.cs
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\obj\Debug\netcoreapp3.1\FitUp.Service.csproj.CoreCompileInputs.cache
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\obj\Debug\netcoreapp3.1\FitUp.Service.dll
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\obj\Debug\netcoreapp3.1\FitUp.Service.pdb
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\bin\Debug\netcoreapp3.1\FitUp.Domain.dll
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\bin\Debug\netcoreapp3.1\FitUp.Repository.dll
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\bin\Debug\netcoreapp3.1\FitUp.Domain.pdb
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\bin\Debug\netcoreapp3.1\FitUp.Repository.pdb
+C:\Users\gligo\source\repos\EShop\FITUP\FitUp.Service\obj\Debug\netcoreapp3.1\FitUp.Service.csproj.CopyComplete

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<FitUp.Domain.Models.Payment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h2 class="text-center text-secondary my-4">Payments</h2>
+
+<div>
+
+<div class=" d-inline-block">
+    <a asp-action="Create">Create New</a>
+</div>
+<div class=" d-inline-block float-right">
+     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <div class="dropdown flex-grow-1">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Month
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=1>January</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=2>February</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=3>March</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=4>April</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=5>May</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=6>June</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=7>July</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=8>August</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=9>September</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=10>Octomber</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=11>November</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-id=12>December</a>
+                    </div>
+                </div>
+     </div>
+</div>
+</div>
+<div class=" table-responsive" style="overflow-y: auto; height:400px">
+<table class="table">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>
+                Payed Price
+            </th>
+            <th>
+                Number Of Trainings Per Week
+            </th>
+            <th>
+                Payment Day
+            </th>
+            <th>
+                Client Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payed_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.week_number_trainings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.payment_date)
+            </td>
+            <td>
+                @item.Client.FirstName @item.Client.LastName
+            </td>
+            <td>
+                <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<a class="btn border-dark float-right" asp-action="CreateInvoice" asp-route-id="@Url.ActionContext.RouteData.Values["id"]">Generate PDF Invoice</a>
